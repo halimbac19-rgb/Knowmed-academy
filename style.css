@@ -1,0 +1,148 @@
+/* RESET & FONTS */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* COLORS */
+:root {
+    --medical-blue: #0056b3; /* Deep Medical Blue */
+    --medical-light: #007bff;
+    --accent-yellow: #ffc107; /* Warning/Highlight Yellow */
+    --text-white: #ffffff;
+}
+
+/* CONTAINER */
+.main-container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--medical-blue);
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+.highlight {
+    color: var(--accent-yellow);
+}
+
+/* TYPOGRAPHY */
+h1 {
+    font-size: 28px;
+    color: var(--medical-blue);
+    margin-bottom: 30px;
+}
+h2 {
+    font-size: 22px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background-color: var(--medical-blue);
+    color: white;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 5px 15px rgba(0,86,179,0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--medical-light);
+    transform: translateY(-3px);
+}
+
+/* CARD BUTTONS (Menu options) */
+.grid-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-card {
+    background-color: white;
+    border: 2px solid #eee;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--medical-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.btn-card:hover {
+    border-color: var(--medical-blue);
+    background-color: #f0f8ff;
+    transform: translateX(5px);
+}
+
+/* Special styling for Calculator */
+.btn-card.special {
+    border-color: var(--accent-yellow);
+    color: #d39e00;
+}
+.btn-card.special:hover {
+    background-color: #fff8e1;
+}
+
+/* Back Button */
+.btn-back {
+    background: transparent;
+    border: none;
+    color: #999;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: auto;
+    text-decoration: underline;
+}
+.btn-back:hover {
+    color: var(--medical-blue);
+}
+
+/* UTILITIES */
+.hidden {
+    display: none;
+}
+.active {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

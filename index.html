@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>KnowMed Academy | Your Medical Space</title>
+    <meta name="description" content="KnowMed Academy - The ultimate medical space for first-year doctors to access Anatomy, Biochemistry, and SSH resources.">
+    <meta name="keywords" content="Medical Academy, KnowMed, Medical Lessons PDF, First Year Medicine, Anatomy Chapters">
+    <meta name="author" content="KnowMed Academy">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <header>
+            <div class="logo">KnowMed <span class="highlight">Academy</span></div>
+        </header>
+
+        <section id="screen-home" class="screen active">
+            <h1>Hello Doctor,<br>in your KnowMed space</h1>
+            <button class="btn-primary" onclick="showScreen('screen-years')">START</button>
+        </section>
+
+        <section id="screen-years" class="screen hidden">
+            <h2>Select Your Year</h2>
+            <div class="grid-menu">
+                <button class="btn-card" onclick="showScreen('screen-semesters')">First Year</button>
+                <button class="btn-card disabled">Second Year (Soon)</button>
+            </div>
+            <button class="btn-back" onclick="showScreen('screen-home')">Back</button>
+        </section>
+
+        <section id="screen-semesters" class="screen hidden">
+            <h2>Dashboard</h2>
+            <div class="grid-menu">
+                <button class="btn-card" onclick="selectSemester(1)">Semester 1</button>
+                <button class="btn-card" onclick="selectSemester(2)">Semester 2</button>
+                <button class="btn-card special" onclick="openCalculator()">Results Calculator</button>
+            </div>
+            <button class="btn-back" onclick="showScreen('screen-years')">Back</button>
+        </section>
+
+        <section id="screen-resources" class="screen hidden">
+            <h2 id="semester-title">Semester Resources</h2>
+            <div class="grid-menu">
+                <button class="btn-card" onclick="showSubjects('Lessons PDF')">Lessons PDF</button>
+                <button class="btn-card" onclick="showSubjects('Lessons Explaining')">Lessons Explaining</button>
+                <button class="btn-card" onclick="showSubjects('Summaries')">Summaries</button>
+                <button class="btn-card" onclick="showSubjects('Past Exams')">Past Exams</button>
+            </div>
+            <button class="btn-back" onclick="showScreen('screen-semesters')">Back</button>
+        </section>
+
+        <section id="screen-subjects" class="screen hidden">
+            <h2 id="resource-title">Subjects</h2>
+            <div class="grid-menu" id="subjects-grid">
+                </div>
+            <button class="btn-back" onclick="showScreen('screen-resources')">Back</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
